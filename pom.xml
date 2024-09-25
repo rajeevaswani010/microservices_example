@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.rjasw.spring.microservices</groupId>
+  <artifactId>microservices</artifactId>
+  <packaging>pom</packaging>
+  <version>0.1</version>
+  <name>MicroserviceDemo</name>
+
+  <modules>
+    <module>product-composite-service</module>
+    <module>recommendation-service</module>
+    <module>review-service</module>
+    <module>product-service</module>
+    <module>api</module>
+    <module>util</module>
+  </modules>
+
+  <properties>
+   <!--  define any properties here  -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+   
+        <java.version>1.8</java.version>
+        <maven.war.version>3.3.1</maven.war.version>
+        <maven.test.version>2.22.2</maven.test.version>
+        <jaxb2.maven.version>2.5.0</jaxb2.maven.version>
+        <maven.jaxb2.version>0.14.0</maven.jaxb2.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.testSource>${java.version}</maven.compiler.testSource>
+        <maven.compiler.testTarget>${java.version}</maven.compiler.testTarget>
+        <slf4j.version>1.7.32</slf4j.version>
+        <spring-boot.version>2.6.0</spring-boot.version>
+        <spring.version>5.6.0</spring.version>
+        <spring.ws-test.version>3.1.3</spring.ws-test.version>
+        <wsdl4j.version>1.6.3</wsdl4j.version>
+        <mariadb.version>2.7.4</mariadb.version>
+        <json.version>20180130</json.version>
+        <lombok.version>1.18.30</lombok.version>
+        <aerospike.version>4.4.20</aerospike.version>
+        <jackson.version>2.15.2</jackson.version>
+   
+  </properties>
+  
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.gearman.jgs</groupId>
+        <artifactId>java-gearman-service</artifactId>
+        <version>0.7.1.1-SNAPSHOT</version>
+    </dependency>  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${spring-boot.version}</version>
+        <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+  
+    <build>
+   <!--  define any build specific things here  -->
+    	<pluginManagement>
+        	<plugins>
+            	<plugin>
+	                <groupId>org.springframework.boot</groupId>
+	                <artifactId>spring-boot-maven-plugin</artifactId>
+	                <version>${spring-boot.version}</version>
+	            </plugin>
+	            <plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-war-plugin</artifactId>
+	                <version>${maven.war.version}</version>
+	                <configuration>
+	                    <failOnMissingWebXml>false</failOnMissingWebXml>
+	                </configuration>
+	            </plugin>
+	            <plugin>
+	                <artifactId>maven-surefire-plugin</artifactId>
+	                <version>${maven.test.version}</version>
+	                <configuration>
+	                    <groups></groups>
+	                    <failIfNoTests>false</failIfNoTests>
+	                    <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
+	                </configuration>
+	            </plugin>
+	            <plugin>
+	                <groupId>org.codehaus.mojo</groupId>
+	                <artifactId>jaxb2-maven-plugin</artifactId>
+	                <version>${jaxb2.maven.version}</version>
+	                <executions>
+	                    <execution>
+	                        <id>xjc</id>
+	                        <goals>
+	                            <goal>xjc</goal>
+	                        </goals>
+	                    </execution>
+	                </executions>
+	                <configuration>
+	                    <arguments>
+	                         <argument>-wsdl</argument>
+	                     </arguments>
+	                    <packageName>com.itsc.api.schema</packageName>
+	                    <schemaLanguage>WSDL</schemaLanguage>
+	                </configuration>
+	            </plugin>
+	       </plugins>
+       </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+  
+</project>

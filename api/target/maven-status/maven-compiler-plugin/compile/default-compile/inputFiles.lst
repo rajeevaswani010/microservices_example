@@ -1,0 +1,13 @@
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/composite/product/ProductAggregate.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/composite/product/ProductCompositeService.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/review/Review.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/exceptions/NotFoundException.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/product/ProductService.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/product/Product.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/exceptions/InvalidInputException.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/composite/product/ReviewSummary.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/review/ReviewService.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/recommendation/Recommendation.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/core/recommendation/RecommendationService.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/composite/product/RecommendationSummary.java
+/home/rajeev/eclipse-workspace24-4/microservices_example/api/src/main/java/org/rjasw/spring/microservices/api/composite/product/ServiceAddresses.java
