@@ -1,4 +1,4 @@
-package org.rjasw.spring.microservices.product_service;
+package org.rjasw.spring.microservices.core.product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
